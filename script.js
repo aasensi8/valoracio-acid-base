@@ -152,9 +152,10 @@ function updateSimulation() {
   elements.explanation.textContent = status.explanation;
   elements.stage.textContent = status.stage;
 
-  const buretteTotalHeight = 284;
-  const liquidY = 48 + (addedBurettePercent / 100) * buretteTotalHeight;
-  const liquidHeight = buretteTotalHeight - (liquidY - 48);
+  const buretteTop = 34;
+  const buretteTotalHeight = 260;
+  const liquidY = buretteTop + (addedBurettePercent / 100) * buretteTotalHeight;
+  const liquidHeight = buretteTotalHeight - (liquidY - buretteTop);
   elements.buretteLiquid.setAttribute("y", liquidY);
   elements.buretteLiquid.setAttribute("height", liquidHeight);
   elements.meniscus.setAttribute("d", `M268 ${liquidY + 4} Q283 ${liquidY - 2} 298 ${liquidY + 4}`);
