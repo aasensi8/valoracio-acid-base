@@ -52,6 +52,8 @@
         <option value="methyl-orange">Taronja de metil</option>
       </select>
 
+      <button id="open-info" type="button" class="info-button">Què és una neutralització?</button>
+
       <div class="button-row">
         <button id="add-volume" type="button">Afegir 1,0 mL</button>
         <button id="reset" type="button" class="secondary">Reiniciar</button>
@@ -86,7 +88,7 @@
               <rect x="266" y="18" width="34" height="318" rx="15" />
             </clipPath>
             <clipPath id="flaskClip">
-              <path d="M252 446 L252 472 L174 526 Q162 546 188 552 L376 552 Q402 546 390 526 L312 472 L312 446 Z" />
+              <path d="M258 446 L258 474 L196 526 Q186 544 208 550 L356 550 Q378 544 368 526 L306 474 L306 446 Z" />
             </clipPath>
           </defs>
 
@@ -131,14 +133,14 @@
           <path id="drop" class="drop" d="M282 396 C273 409 273 421 282 426 C291 421 291 409 282 396 Z" />
 
           <g class="flask-real">
-            <path class="flask-body" d="M252 446 L252 472 L174 526 Q162 546 188 552 L376 552 Q402 546 390 526 L312 472 L312 446 Z" />
-            <path id="solution" class="solution-fill" clip-path="url(#flaskClip)" d="M176 512 C218 500 252 522 294 508 C332 496 360 508 386 514 L410 558 L154 558 Z" />
-            <ellipse class="solution-surface" cx="282" cy="514" rx="86" ry="12" />
-            <path class="flask-neck-glass" d="M252 446 V410 Q252 398 264 398 H300 Q312 398 312 410 V446" />
-            <path class="flask-rim" d="M244 408 Q282 394 320 408" />
-            <path class="flask-highlight" d="M208 488 C192 514 190 536 202 544" />
-            <path class="flask-shoulder" d="M252 472 C264 486 300 486 312 472" />
-            <ellipse class="swirl" cx="282" cy="526" rx="40" ry="8" />
+            <path class="flask-body" d="M258 446 L258 474 L196 526 Q186 544 208 550 L356 550 Q378 544 368 526 L306 474 L306 446 Z" />
+            <path id="solution" class="solution-fill" clip-path="url(#flaskClip)" d="M198 514 C230 504 258 520 292 510 C322 500 346 510 366 516 L386 556 L178 556 Z" />
+            <ellipse class="solution-surface" cx="282" cy="516" rx="66" ry="10" />
+            <path class="flask-neck-glass" d="M258 446 V410 Q258 398 268 398 H296 Q306 398 306 410 V446" />
+            <path class="flask-rim" d="M250 408 Q282 396 314 408" />
+            <path class="flask-highlight" d="M222 492 C210 516 210 536 220 544" />
+            <path class="flask-shoulder" d="M258 474 C268 486 296 486 306 474" />
+            <ellipse class="swirl" cx="282" cy="528" rx="32" ry="7" />
           </g>
 
           <g class="stirrer">
@@ -173,6 +175,40 @@
       </p>
     </section>
   </main>
+
+  <div class="modal-backdrop" id="info-modal" aria-hidden="true">
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button id="close-info" type="button" class="modal-close" aria-label="Tancar">×</button>
+      <p class="eyebrow">Conceptes clau</p>
+      <h2 id="modal-title">Reacció de neutralització</h2>
+      <p>
+        Una neutralització és una reacció entre un àcid i una base. Els ions hidrogen de l'àcid
+        reaccionen amb els ions hidròxid de la base i formen aigua.
+      </p>
+      <div class="reaction-box">
+        <span>H<sup>+</sup></span>
+        <span>+</span>
+        <span>OH<sup>-</sup></span>
+        <span>→</span>
+        <span>H<sub>2</sub>O</span>
+      </div>
+      <p>
+        En una valoració, afegim una dissolució de concentració coneguda fins arribar al punt
+        d'equivalència. En aquest punt, els mols d'àcid i base han reaccionat segons la proporció
+        estequiomètrica.
+      </p>
+      <h3>Com calcular una concentració desconeguda</h3>
+      <p>
+        Per una reacció 1:1, com HCl + NaOH → NaCl + H<sub>2</sub>O, fem servir:
+      </p>
+      <div class="formula">C<sub>àcid</sub> · V<sub>àcid</sub> = C<sub>base</sub> · V<sub>base</sub></div>
+      <p>
+        Si la mostra problema és l'àcid, llavors:
+        <strong>C<sub>àcid</sub> = (C<sub>base</sub> · V<sub>base</sub>) / V<sub>àcid</sub></strong>.
+        Els volums s'han d'expressar en litres.
+      </p>
+    </section>
+  </div>
 
   <script src="script.js"></script>
 </body>
