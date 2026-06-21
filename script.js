@@ -140,7 +140,7 @@ function updateSimulation() {
   const ph = estimatePh(acidType, acidConcentration, baseConcentration, state.addedBaseMl);
   const color = getIndicatorColor(selectedIndicator, ph);
   const status = getStageText(state.addedBaseMl, equivalenceMl, ph, selectedIndicator);
-  const remainingBurettePercent = clamp(100 - (state.addedBaseMl / MAX_BURETTE_VOLUME_ML) * 100, 0, 100);
+  const addedBurettePercent = clamp((state.addedBaseMl / MAX_BURETTE_VOLUME_ML) * 100, 0, 100);
 
   document.documentElement.style.setProperty("--solution-color", color);
   document.documentElement.style.setProperty("--solution-glow", `${color}77`);
@@ -152,12 +152,12 @@ function updateSimulation() {
   elements.explanation.textContent = status.explanation;
   elements.stage.textContent = status.stage;
 
-  const buretteTotalHeight = 318;
-  const liquidHeight = (remainingBurettePercent / 100) * buretteTotalHeight;
-  const liquidY = 48 + (buretteTotalHeight - liquidHeight);
+  const buretteTotalHeight = 284;
+  const liquidY = 48 + (addedBurettePercent / 100) * buretteTotalHeight;
+  const liquidHeight = buretteTotalHeight - (liquidY - 48);
   elements.buretteLiquid.setAttribute("y", liquidY);
   elements.buretteLiquid.setAttribute("height", liquidHeight);
-  elements.meniscus.setAttribute("d", `M268 ${liquidY + 20} Q283 ${liquidY + 14} 298 ${liquidY + 20}`);
+  elements.meniscus.setAttribute("d", `M268 ${liquidY + 4} Q283 ${liquidY - 2} 298 ${liquidY + 4}`);
 }
 
 function animateDrop() {
