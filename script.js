@@ -55,7 +55,10 @@ const elements = {
   buretteLiquid: document.querySelector("#burette-liquid"),
   meniscus: document.querySelector("#meniscus"),
   drop: document.querySelector("#drop"),
-  stage: document.querySelector("#stage")
+  stage: document.querySelector("#stage"),
+  openInfo: document.querySelector("#open-info"),
+  closeInfo: document.querySelector("#close-info"),
+  infoModal: document.querySelector("#info-modal")
 };
 
 function clamp(value, min, max) {
@@ -184,8 +187,32 @@ function resetVolumeOnParameterChange() {
   updateSimulation();
 }
 
+function openInfoModal() {
+  elements.infoModal.classList.add("open");
+  elements.infoModal.setAttribute("aria-hidden", "false");
+  elements.closeInfo.focus();
+}
+
+function closeInfoModal() {
+  elements.infoModal.classList.remove("open");
+  elements.infoModal.setAttribute("aria-hidden", "true");
+  elements.openInfo.focus();
+}
+
 elements.addVolume.addEventListener("click", addVolume);
 elements.reset.addEventListener("click", resetSimulation);
+elements.openInfo.addEventListener("click", openInfoModal);
+elements.closeInfo.addEventListener("click", closeInfoModal);
+elements.infoModal.addEventListener("click", (event) => {
+  if (event.target === elements.infoModal) {
+    closeInfoModal();
+  }
+});
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && elements.infoModal.classList.contains("open")) {
+    closeInfoModal();
+  }
+});
 elements.acid.addEventListener("change", resetVolumeOnParameterChange);
 elements.base.addEventListener("change", resetVolumeOnParameterChange);
 elements.indicator.addEventListener("change", updateSimulation);
