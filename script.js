@@ -53,6 +53,7 @@ const elements = {
   explanation: document.querySelector("#explanation"),
   solution: document.querySelector("#solution"),
   buretteLiquid: document.querySelector("#burette-liquid"),
+  meniscus: document.querySelector("#meniscus"),
   drop: document.querySelector("#drop"),
   stage: document.querySelector("#stage")
 };
@@ -150,7 +151,13 @@ function updateSimulation() {
   elements.phValue.textContent = ph.toFixed(2).replace(".", ",");
   elements.explanation.textContent = status.explanation;
   elements.stage.textContent = status.stage;
-  elements.buretteLiquid.style.height = `${remainingBurettePercent}%`;
+
+  const buretteTotalHeight = 318;
+  const liquidHeight = (remainingBurettePercent / 100) * buretteTotalHeight;
+  const liquidY = 48 + (buretteTotalHeight - liquidHeight);
+  elements.buretteLiquid.setAttribute("y", liquidY);
+  elements.buretteLiquid.setAttribute("height", liquidHeight);
+  elements.meniscus.setAttribute("d", `M268 ${liquidY + 20} Q283 ${liquidY + 14} 298 ${liquidY + 20}`);
 }
 
 function animateDrop() {
