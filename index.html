@@ -68,28 +68,88 @@
       </div>
 
       <div class="lab-bench" aria-label="Bureta, erlenmeyer i agitador magnètic">
-        <div class="stand"></div>
-        <div class="clamp"></div>
-        <div class="burette">
-          <div class="burette-liquid" id="burette-liquid"></div>
-          <span class="mark mark-0">0</span>
-          <span class="mark mark-25">25</span>
-          <span class="mark mark-50">50</span>
-        </div>
-        <div class="tap"></div>
-        <div class="drop" id="drop"></div>
+        <svg class="lab-svg" viewBox="0 0 760 560" role="img" aria-labelledby="lab-title lab-desc">
+          <title id="lab-title">Muntatge de valoració àcid-base</title>
+          <desc id="lab-desc">Una bureta graduada subjectada amb pinça deixa caure base dins un erlenmeyer situat damunt un agitador magnètic.</desc>
 
-        <div class="flask">
-          <div class="flask-neck"></div>
-          <div class="solution" id="solution">
-            <div class="swirl"></div>
-          </div>
-          <div class="flask-shine"></div>
-        </div>
+          <defs>
+            <linearGradient id="glassGradient" x1="0" x2="1">
+              <stop offset="0%" stop-color="#ffffff" stop-opacity="0.72" />
+              <stop offset="42%" stop-color="#cfe7ff" stop-opacity="0.18" />
+              <stop offset="100%" stop-color="#ffffff" stop-opacity="0.46" />
+            </linearGradient>
+            <linearGradient id="buretteLiquidGradient" x1="0" x2="0" y1="0" y2="1">
+              <stop offset="0%" stop-color="#8fd0ff" />
+              <stop offset="100%" stop-color="#2f82d2" />
+            </linearGradient>
+            <clipPath id="buretteClip">
+              <rect x="266" y="48" width="34" height="318" rx="15" />
+            </clipPath>
+            <clipPath id="flaskClip">
+              <path d="M458 198 L458 286 L360 468 Q350 492 378 504 L620 504 Q648 492 636 468 L538 286 L538 198 Z" />
+            </clipPath>
+          </defs>
 
-        <div class="stirrer">
-          <div class="stir-bar"></div>
-        </div>
+          <rect class="bench-wall" x="0" y="0" width="760" height="405" />
+          <rect class="bench-table" x="0" y="405" width="760" height="155" />
+
+          <g class="support-stand">
+            <rect x="172" y="62" width="12" height="404" rx="6" />
+            <rect x="96" y="462" width="168" height="16" rx="8" />
+            <rect x="178" y="114" width="112" height="14" rx="7" />
+            <rect x="282" y="106" width="58" height="30" rx="8" />
+            <circle cx="308" cy="121" r="9" />
+          </g>
+
+          <g class="burette-real">
+            <rect class="burette-glass" x="266" y="48" width="34" height="318" rx="15" />
+            <rect id="burette-liquid" class="burette-liquid" x="266" y="48" width="34" height="318" clip-path="url(#buretteClip)" />
+            <path id="meniscus" class="meniscus" d="M268 68 Q283 62 298 68" />
+            <path class="burette-highlight" d="M276 58 L276 352" />
+            <g class="graduations">
+              <path d="M300 72 H318" />
+              <path d="M300 98 H312" />
+              <path d="M300 124 H312" />
+              <path d="M300 150 H318" />
+              <path d="M300 176 H312" />
+              <path d="M300 202 H312" />
+              <path d="M300 228 H318" />
+              <path d="M300 254 H312" />
+              <path d="M300 280 H312" />
+              <path d="M300 306 H318" />
+              <path d="M300 332 H312" />
+              <path d="M300 358 H318" />
+            </g>
+            <text x="324" y="76">0</text>
+            <text x="324" y="154">10</text>
+            <text x="324" y="232">25</text>
+            <text x="324" y="310">40</text>
+            <text x="324" y="361">50 mL</text>
+            <path class="burette-tip" d="M277 366 H289 L286 402 H280 Z" />
+            <rect class="stopcock" x="247" y="356" width="74" height="14" rx="7" />
+            <circle class="stopcock-core" cx="284" cy="363" r="10" />
+            <path class="nozzle" d="M282 402 L282 426" />
+          </g>
+
+          <path id="drop" class="drop" d="M282 432 C273 445 273 457 282 462 C291 457 291 445 282 432 Z" />
+
+          <g class="flask-real">
+            <path class="flask-body" d="M458 198 L458 286 L360 468 Q350 492 378 504 L620 504 Q648 492 636 468 L538 286 L538 198 Z" />
+            <path id="solution" class="solution-fill" clip-path="url(#flaskClip)" d="M368 415 C418 400 471 430 520 413 C566 398 598 412 627 418 L650 512 L350 512 Z" />
+            <ellipse class="solution-surface" cx="498" cy="418" rx="119" ry="17" />
+            <path class="flask-neck-glass" d="M458 198 V92 Q458 78 472 78 H524 Q538 78 538 92 V198" />
+            <path class="flask-rim" d="M452 88 Q498 74 544 88" />
+            <path class="flask-highlight" d="M414 398 C397 434 391 458 404 474" />
+            <path class="flask-shoulder" d="M458 286 C474 303 522 303 538 286" />
+            <ellipse class="swirl" cx="498" cy="448" rx="48" ry="14" />
+          </g>
+
+          <g class="stirrer">
+            <rect x="344" y="500" width="310" height="44" rx="12" />
+            <circle cx="610" cy="522" r="10" />
+            <path class="stir-bar" d="M466 452 H530" />
+          </g>
+        </svg>
       </div>
     </section>
 
