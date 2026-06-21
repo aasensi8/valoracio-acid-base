@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valoració àcid-base</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div>
+      <p class="eyebrow">Química interactiva</p>
+      <h1>Valoració àcid-base</h1>
+      <p class="intro">
+        Simula una valoració afegint base des d'una bureta sobre un àcid dins d'un erlenmeyer.
+      </p>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="panel controls" aria-labelledby="controls-title">
+      <h2 id="controls-title">Paràmetres</h2>
+
+      <label for="acid">Àcid</label>
+      <select id="acid">
+        <option value="HCl">HCl - àcid clorhídric</option>
+        <option value="HNO3">HNO3 - àcid nítric</option>
+        <option value="CH3COOH">CH3COOH - àcid acètic</option>
+      </select>
+
+      <label for="base">Base</label>
+      <select id="base">
+        <option value="NaOH">NaOH - hidròxid de sodi</option>
+        <option value="KOH">KOH - hidròxid de potassi</option>
+      </select>
+
+      <div class="field-grid">
+        <div>
+          <label for="acid-concentration">Concentració àcid (mol/L)</label>
+          <input id="acid-concentration" type="number" min="0.01" max="2" step="0.01" value="0.10">
+        </div>
+        <div>
+          <label for="base-concentration">Concentració base (mol/L)</label>
+          <input id="base-concentration" type="number" min="0.01" max="2" step="0.01" value="0.10">
+        </div>
+      </div>
+
+      <label for="indicator">Indicador</label>
+      <select id="indicator">
+        <option value="phenolphthalein">Fenolftaleïna</option>
+        <option value="bromothymol">Blau de bromotimol</option>
+        <option value="methyl-orange">Taronja de metil</option>
+      </select>
+
+      <div class="button-row">
+        <button id="add-volume" type="button">Afegir 1,0 mL</button>
+        <button id="reset" type="button" class="secondary">Reiniciar</button>
+      </div>
+    </section>
+
+    <section class="simulation" aria-labelledby="simulation-title">
+      <div class="simulation-heading">
+        <div>
+          <p class="eyebrow">Simulació visual</p>
+          <h2 id="simulation-title">Muntatge de laboratori</h2>
+        </div>
+        <div class="status-pill" id="stage">Abans del punt d'equivalència</div>
+      </div>
+
+      <div class="lab-bench" aria-label="Bureta, erlenmeyer i agitador magnètic">
+        <div class="stand"></div>
+        <div class="clamp"></div>
+        <div class="burette">
+          <div class="burette-liquid" id="burette-liquid"></div>
+          <span class="mark mark-0">0</span>
+          <span class="mark mark-25">25</span>
+          <span class="mark mark-50">50</span>
+        </div>
+        <div class="tap"></div>
+        <div class="drop" id="drop"></div>
+
+        <div class="flask">
+          <div class="flask-neck"></div>
+          <div class="solution" id="solution">
+            <div class="swirl"></div>
+          </div>
+          <div class="flask-shine"></div>
+        </div>
+
+        <div class="stirrer">
+          <div class="stir-bar"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel readout" aria-labelledby="results-title">
+      <h2 id="results-title">Resultats</h2>
+      <div class="metric">
+        <span>Volum inicial d'àcid</span>
+        <strong id="acid-volume">25,0 mL</strong>
+      </div>
+      <div class="metric">
+        <span>Volum de base afegit</span>
+        <strong id="base-volume">0,0 mL</strong>
+      </div>
+      <div class="metric">
+        <span>Punt d'equivalència</span>
+        <strong id="equivalence-volume">25,0 mL</strong>
+      </div>
+      <div class="metric">
+        <span>pH aproximat</span>
+        <strong id="ph-value">1,00</strong>
+      </div>
+      <p class="explanation" id="explanation">
+        Encara hi ha excés d'àcid. L'indicador manté el color de medi àcid.
+      </p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
