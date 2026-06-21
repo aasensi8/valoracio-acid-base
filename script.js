@@ -152,8 +152,8 @@ function updateSimulation() {
   elements.explanation.textContent = status.explanation;
   elements.stage.textContent = status.stage;
 
-  const buretteTop = 34;
-  const buretteTotalHeight = 260;
+  const buretteTop = 18;
+  const buretteTotalHeight = 318;
   const liquidY = buretteTop + (addedBurettePercent / 100) * buretteTotalHeight;
   const liquidHeight = buretteTotalHeight - (liquidY - buretteTop);
   elements.buretteLiquid.setAttribute("y", liquidY);
