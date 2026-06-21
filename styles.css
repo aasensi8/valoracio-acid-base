@@ -335,11 +335,12 @@ button.secondary:hover {
   stroke-width: 10;
   transform-box: fill-box;
   transform-origin: center;
-  animation: stir 0.9s linear infinite;
+  animation: stir 0.8s ease-in-out infinite alternate;
 }
 
 @keyframes stir {
-  to { transform: rotate(360deg); }
+  from { transform: translateX(-18px); }
+  to { transform: translateX(18px); }
 }
 
 .readout {
