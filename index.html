@@ -83,10 +83,10 @@
               <stop offset="100%" stop-color="#2f82d2" />
             </linearGradient>
             <clipPath id="buretteClip">
-              <rect x="266" y="48" width="34" height="284" rx="15" />
+              <rect x="266" y="34" width="34" height="260" rx="15" />
             </clipPath>
             <clipPath id="flaskClip">
-              <path d="M242 432 L242 462 L144 522 Q134 540 162 546 L404 546 Q432 540 420 522 L322 462 L322 432 Z" />
+              <path d="M246 356 L246 410 L148 520 Q136 542 166 550 L398 550 Q428 542 416 520 L318 410 L318 356 Z" />
             </clipPath>
           </defs>
 
@@ -102,44 +102,43 @@
           </g>
 
           <g class="burette-real">
-            <rect class="burette-glass" x="266" y="48" width="34" height="284" rx="15" />
-            <rect id="burette-liquid" class="burette-liquid" x="266" y="48" width="34" height="284" clip-path="url(#buretteClip)" />
-            <path id="meniscus" class="meniscus" d="M268 68 Q283 62 298 68" />
-            <path class="burette-highlight" d="M276 58 L276 318" />
+            <rect class="burette-glass" x="266" y="34" width="34" height="260" rx="15" />
+            <rect id="burette-liquid" class="burette-liquid" x="266" y="34" width="34" height="260" clip-path="url(#buretteClip)" />
+            <path id="meniscus" class="meniscus" d="M268 54 Q283 48 298 54" />
+            <path class="burette-highlight" d="M276 44 L276 280" />
             <g class="graduations">
-              <path d="M300 72 H318" />
-              <path d="M300 98 H312" />
-              <path d="M300 124 H312" />
-              <path d="M300 150 H318" />
-              <path d="M300 176 H312" />
-              <path d="M300 202 H312" />
-              <path d="M300 228 H318" />
-              <path d="M300 254 H312" />
-              <path d="M300 280 H312" />
-              <path d="M300 306 H318" />
+              <path d="M300 54 H320" />
+              <path d="M300 80 H312" />
+              <path d="M300 106 H312" />
+              <path d="M300 132 H320" />
+              <path d="M300 158 H312" />
+              <path d="M300 184 H312" />
+              <path d="M300 210 H320" />
+              <path d="M300 236 H312" />
+              <path d="M300 262 H312" />
+              <path d="M300 288 H320" />
             </g>
-            <text x="324" y="76">0</text>
-            <text x="324" y="154">10</text>
-            <text x="324" y="232">25</text>
-            <text x="324" y="310">40</text>
-            <text x="324" y="329">50 mL</text>
-            <path class="burette-tip" d="M277 332 H289 L286 364 H280 Z" />
-            <rect class="stopcock" x="247" y="322" width="74" height="14" rx="7" />
-            <circle class="stopcock-core" cx="284" cy="329" r="10" />
-            <path class="nozzle" d="M282 364 L282 386" />
+            <text x="324" y="58">50 mL</text>
+            <text x="324" y="136">40</text>
+            <text x="324" y="214">25</text>
+            <text x="324" y="292">0 mL</text>
+            <path class="burette-tip" d="M277 294 H289 L286 326 H280 Z" />
+            <rect class="stopcock" x="247" y="288" width="74" height="14" rx="7" />
+            <circle class="stopcock-core" cx="284" cy="295" r="10" />
+            <path class="nozzle" d="M282 326 L282 350" />
           </g>
 
-          <path id="drop" class="drop" d="M282 390 C273 403 273 415 282 420 C291 415 291 403 282 390 Z" />
+          <path id="drop" class="drop" d="M282 354 C273 367 273 379 282 384 C291 379 291 367 282 354 Z" />
 
           <g class="flask-real">
-            <path class="flask-body" d="M242 432 L242 462 L144 522 Q134 540 162 546 L404 546 Q432 540 420 522 L322 462 L322 432 Z" />
-            <path id="solution" class="solution-fill" clip-path="url(#flaskClip)" d="M152 492 C202 478 255 506 304 490 C350 476 382 490 411 496 L434 552 L134 552 Z" />
-            <ellipse class="solution-surface" cx="282" cy="494" rx="119" ry="15" />
-            <path class="flask-neck-glass" d="M242 432 V398 Q242 386 256 386 H308 Q322 386 322 398 V432" />
-            <path class="flask-rim" d="M236 396 Q282 382 328 396" />
-            <path class="flask-highlight" d="M198 488 C184 510 180 526 188 536" />
-            <path class="flask-shoulder" d="M242 462 C258 476 306 476 322 462" />
-            <ellipse class="swirl" cx="282" cy="510" rx="48" ry="10" />
+            <path class="flask-body" d="M246 356 L246 410 L148 520 Q136 542 166 550 L398 550 Q428 542 416 520 L318 410 L318 356 Z" />
+            <path id="solution" class="solution-fill" clip-path="url(#flaskClip)" d="M156 492 C204 478 250 506 298 490 C346 476 382 490 408 496 L432 556 L136 556 Z" />
+            <ellipse class="solution-surface" cx="282" cy="494" rx="112" ry="15" />
+            <path class="flask-neck-glass" d="M246 356 V318 Q246 304 260 304 H304 Q318 304 318 318 V356" />
+            <path class="flask-rim" d="M238 314 Q282 300 326 314" />
+            <path class="flask-highlight" d="M198 462 C180 498 178 526 190 538" />
+            <path class="flask-shoulder" d="M246 410 C260 427 304 427 318 410" />
+            <ellipse class="swirl" cx="282" cy="512" rx="48" ry="10" />
           </g>
 
           <g class="stirrer">
