@@ -155,13 +155,13 @@ function updateSimulation() {
   elements.explanation.textContent = status.explanation;
   elements.stage.textContent = status.stage;
 
-  const buretteTop = 18;
-  const buretteTotalHeight = 318;
+  const buretteTop = 52;
+  const buretteTotalHeight = 250;
   const liquidY = buretteTop + (addedBurettePercent / 100) * buretteTotalHeight;
   const liquidHeight = buretteTotalHeight - (liquidY - buretteTop);
   elements.buretteLiquid.setAttribute("y", liquidY);
   elements.buretteLiquid.setAttribute("height", liquidHeight);
-  elements.meniscus.setAttribute("d", `M268 ${liquidY + 4} Q283 ${liquidY - 2} 298 ${liquidY + 4}`);
+  elements.meniscus.setAttribute("d", `M270 ${liquidY + 4} Q283 ${liquidY - 2} 296 ${liquidY + 4}`);
 }
 
 function animateDrop() {
